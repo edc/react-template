@@ -45,7 +45,7 @@ No need for bower.
 
 4. Create the webpack config:
 
-  ```
+  ```javascript
 cat << EOF > webpack.config.js
 module.exports = {
     context: __dirname + "/src",
@@ -76,7 +76,7 @@ this consistent with the actual name used in script tag.
 
 5. Create some react code
 
-  ```
+  ```javascript
 cat << EOF > src/greet.jsx
 module.exports = function() {
   return <div>Hello {this.props.name}</div>

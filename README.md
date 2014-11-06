@@ -3,11 +3,11 @@ Skeleton with Webpack, CoffeeScript, Backbone and React
 
 ### How is this created
 
-(All commmands list below are captured in `scaffold.sh`.)
+(All commmands listed below are captured in `scaffold.sh`.)
 
 1. Make the folders and empty files
 
-```
+  ```
 mkdir src
 echo "alert 1" > src/init.coffee
 
@@ -26,26 +26,26 @@ EOF
 
 2. Initialize this as an NPM package, interactively via
 
-```
+  ```
 npm init
 ```
 
 3. Install all dependencies:
 
-```
+  ```
 npm install webpack webpack-dev-server coffee-loader jsx-loader --save-dev
 npm install backbone react --save-dev
 ```
 
-Note that we can install regular application dependencies like react via npm!
+  Note that we can install regular application dependencies like react via npm!
 No need for bower.
 
-Also note that we use jquery from a CDN, and take advantage of webpack's
+  Also note that we use jquery from a CDN, and take advantage of webpack's
 "external" feature.
 
 4. Create the webpack config:
 
-```
+  ```
 cat << EOF > webpack.config.js
 module.exports = {
     context: __dirname + "/src",
@@ -70,13 +70,13 @@ module.exports = {
 EOF
 ```
 
-Note that `filename` actually has a folder in it. This is important because
+  Note that `filename` actually has a folder in it. This is important because
 the filename is the one exposed by webpack-dev-server. So it's best to keep
 this consistent with the actual name used in script tag.
 
 5. Create some react code
 
-```
+  ```
 cat << EOF > src/greet.jsx
 module.exports = function() {
   return <div>Hello {this.props.name}</div>

@@ -1,3 +1,6 @@
-module.exports = function() {
-  return <div>Hello {this.props.name}</div>
-}
+module.exports = function() { return (
+
+<div>Hello {this.props.name}</div>
+
+
+)}

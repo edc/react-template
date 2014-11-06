@@ -78,9 +78,12 @@ this consistent with the actual name used in script tag.
 
   ```javascript
 cat << EOF > src/greet.jsx
-module.exports = function() {
-  return <div>Hello {this.props.name}</div>
-}
+module.exports = function() { return (
+
+<div>Hello {this.props.name}</div>
+
+
+)}
 EOF
 
 cat << EOF >> src/init.coffee
@@ -88,7 +91,7 @@ cat << EOF >> src/init.coffee
 React = window.React = require('react')
 
 GreetBox = React.createClass
-  render: -> require('./greet.jsx').call(this)
+  render: require('./greet.jsx')
 
 React.render React.createElement(GreetBox, {name: "Joe"}),
   document.getElementsByTagName('h1')[0]
